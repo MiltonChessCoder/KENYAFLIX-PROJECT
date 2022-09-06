@@ -61,3 +61,22 @@ body {
   .movies__container img:hover {
     transform: scale(1.1);
   }
+
+  .movies__container img {
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+  }
