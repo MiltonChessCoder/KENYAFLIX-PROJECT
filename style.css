@@ -4,7 +4,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
   }
-
+  
   .dropdown-container {
     position: absolute;
     top: 100%;
@@ -12,7 +12,7 @@ body {
     padding-top: 3px;
     display: none;
   }
-
+  
   .dropdown {
     background-color: black;
     padding: 8px;
@@ -23,7 +23,7 @@ body {
   .dropdown span {
     cursor: pointer;
   }
-
+  
   .original__movies {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -61,7 +61,7 @@ body {
   .movies__container img:hover {
     transform: scale(1.1);
   }
-
+  
   .movies__container img {
     margin-right: 10px;
     width: 200px;
@@ -80,7 +80,7 @@ body {
     right: 0;
     padding-top: 15px;
   }
-
+  
   .logo > img {
     width: 120px;
   }
@@ -96,7 +96,7 @@ body {
   img {
     width: 100px;
   }
-
+  
   .featured {
     height: 400px;
     position: relative;
@@ -173,11 +173,11 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     z-index: 10;
   }
-
+  
   .modal-body iframe {
     width: 100%;
   }
-
+  
   .modal-body span {
     color: #333;
     width: 100%;
