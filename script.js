@@ -1,9 +1,16 @@
+
+
+// Call the main functions the page is loaded
 window.onload = () => {
     getOriginals()
     getTrendingNow()
     getTopRated()
   }
 
+  // ** Helper function that makes dynamic API calls **
+  // path_type (backdrop, poster)
+  // dom_element (trending, top rated)
+//   fetchMovies('https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1', 'top_rated', 'backdrop_path')
   function fetchMovies(url, dom_element, path_type) {
     fetch(url)
       .then(response => {
@@ -21,6 +28,7 @@ window.onload = () => {
       })
   }
 
+  //  ** Function that displays the movies to the DOM **
   showMovies = (movies, dom_element, path_type) => {
     
     // Create a variable that grabs id or class
@@ -47,6 +55,7 @@ window.onload = () => {
     }
   }
 
+  // ** Function that fetches Netflix Originals **
   function getOriginals() {
     var url =
       'https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
@@ -65,6 +74,8 @@ window.onload = () => {
     fetchMovies(url, '#top_rated', 'backdrop_path')
   }
 
+//BONUS
+  
   async function getMovieTrailer(id) {
     var url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
     return await fetch(url).then(response => {
@@ -92,6 +103,7 @@ window.onload = () => {
   const handleMovieSelection = e => {
     const id = e.target.getAttribute('data-id')
     const iframe = document.getElementById('movieTrailer')
+    //  id of the movie
     getMovieTrailer(id).then(data => {
       const results = data.results
       const youtubeTrailers = results.filter(result => {
@@ -103,3 +115,11 @@ window.onload = () => {
       })
       setTrailer(youtubeTrailers)
     })
+
+    // open modal
+    $('#trailerModal').modal('show')
+    // call the api with the ID
+  }
+  
+  
+  
