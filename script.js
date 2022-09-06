@@ -92,3 +92,14 @@ window.onload = () => {
   const handleMovieSelection = e => {
     const id = e.target.getAttribute('data-id')
     const iframe = document.getElementById('movieTrailer')
+    getMovieTrailer(id).then(data => {
+      const results = data.results
+      const youtubeTrailers = results.filter(result => {
+        if (result.site == 'YouTube' && result.type == 'Trailer') {
+          return true
+        } else {
+          return false
+        }
+      })
+      setTrailer(youtubeTrailers)
+    })
