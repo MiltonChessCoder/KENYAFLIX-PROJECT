@@ -89,3 +89,6 @@ window.onload = () => {
     }
   }
   
+  const handleMovieSelection = e => {
+    const id = e.target.getAttribute('data-id')
+    const iframe = document.getElementById('movieTrailer')
