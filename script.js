@@ -6,7 +6,7 @@ window.onload = () => {
     getTrendingNow()
     getTopRated()
   }
-
+  
   // ** Helper function that makes dynamic API calls **
   // path_type (backdrop, poster)
   // dom_element (trending, top rated)
@@ -27,7 +27,7 @@ window.onload = () => {
         console.log(error_data)
       })
   }
-
+  
   //  ** Function that displays the movies to the DOM **
   showMovies = (movies, dom_element, path_type) => {
     
@@ -54,7 +54,7 @@ window.onload = () => {
       moviesEl.appendChild(imageElement)
     }
   }
-
+  
   // ** Function that fetches Netflix Originals **
   function getOriginals() {
     var url =
@@ -73,7 +73,7 @@ window.onload = () => {
       'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
     fetchMovies(url, '#top_rated', 'backdrop_path')
   }
-
+  
 //BONUS
   
   async function getMovieTrailer(id) {
@@ -115,7 +115,7 @@ window.onload = () => {
       })
       setTrailer(youtubeTrailers)
     })
-
+  
     // open modal
     $('#trailerModal').modal('show')
     // call the api with the ID
