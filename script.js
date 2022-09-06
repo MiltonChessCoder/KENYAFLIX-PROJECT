@@ -64,3 +64,28 @@ window.onload = () => {
       'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
     fetchMovies(url, '#top_rated', 'backdrop_path')
   }
+
+  async function getMovieTrailer(id) {
+    var url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+    return await fetch(url).then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('something went wrong')
+      }
+    })
+  }
+  
+  const setTrailer = trailers => {
+    const iframe = document.getElementById('movieTrailer')
+    const movieNotFound = document.querySelector('.movieNotFound')
+    if (trailers.length > 0) {
+      movieNotFound.classList.add('d-none')
+      iframe.classList.remove('d-none')
+      iframe.src = `https://www.youtube.com/embed/${trailers[0].key}`
+    } else {
+      iframe.classList.add('d-none')
+      movieNotFound.classList.remove('d-none')
+    }
+  }
+  
