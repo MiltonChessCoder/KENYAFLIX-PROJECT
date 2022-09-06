@@ -173,3 +173,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     z-index: 10;
   }
+
+  .modal-body iframe {
+    width: 100%;
+  }
