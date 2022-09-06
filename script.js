@@ -46,3 +46,21 @@ window.onload = () => {
       moviesEl.appendChild(imageElement)
     }
   }
+
+  function getOriginals() {
+    var url =
+      'https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
+    fetchMovies(url, '.original__movies', 'poster_path')
+  }
+  // ** Function that fetches Trending Movies **
+  function getTrendingNow() {
+    var url =
+      'https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045'
+    fetchMovies(url, '#trending', 'backdrop_path')
+  }
+  // ** Function that fetches Top Rated Movies **
+  function getTopRated() {
+    var url =
+      'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
+    fetchMovies(url, '#top_rated', 'backdrop_path')
+  }
