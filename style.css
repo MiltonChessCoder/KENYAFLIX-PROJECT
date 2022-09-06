@@ -80,3 +80,19 @@ body {
     right: 0;
     padding-top: 15px;
   }
+
+  .logo > img {
+    width: 120px;
+  }
+  
+  .profile {
+    position: relative;
+  }
+  
+  .profile > img {
+    width: 40px;
+  }
+  
+  img {
+    width: 100px;
+  }
