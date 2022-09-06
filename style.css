@@ -12,3 +12,14 @@ body {
     padding-top: 3px;
     display: none;
   }
+
+  .dropdown {
+    background-color: black;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100px;
+  }
+  
+  .dropdown span {
+    cursor: pointer;
+  }
